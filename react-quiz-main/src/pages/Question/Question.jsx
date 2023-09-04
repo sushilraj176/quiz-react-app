@@ -30,7 +30,9 @@ function Question() {
 
         <div className="flex space-x-5">
           <p className="min-w-[170px]">Category </p>
-          <p className="font-bold text-orange-500">{questionData[0].category}</p>
+          <p className="font-bold text-orange-500">
+            {questionData[0].category}
+          </p>
         </div>
 
         <div className="flex space-x-5">
@@ -42,7 +44,7 @@ function Question() {
 
         <div className="flex space-x-5">
           <p className="min-w-[170px]">Time </p>
-          <p className="font-bold">3 mins.</p>
+          <p className="font-bold">30 mins.</p>
         </div>
       </div>
 

@@ -7,11 +7,11 @@ import AnimateProvider from "./components/AnimateProvider/AnimateProvider";
 function App() {
   const [type, setType] = useState(Types[0].id);
   const [level, setLevel] = useState(Level[0]);
-  const { question } = useQuestionStore();
+  const { auth, question } = useQuestionStore();
   const navigate = useNavigate();
 
   const handleBegin = () => {
-    const query = `amount=5&category=${type}&difficulty=${level}&type=multiple`;
+    const query = `amount=15&category=${type}&difficulty=${level}&type=multiple`;
     navigate(`/question?${query}`, {
       replace: false,
     });
@@ -19,10 +19,13 @@ function App() {
 
   if (question.length) return <Navigate to={"/question"} />;
 
+  const Email = auth?.email;
+
   return (
     <AnimateProvider className="flex flex-col text-sm md:mx-auto md:max-w-xl ">
       <h1 className="text-lg font-bold text-slate-800 mb-10">
-        Welcome to <span>Bert Quiz</span>
+        {`Hi ${Email}`} <br />
+        Welcome to <span>Quiz</span>
       </h1>
 
       <h3 className="text-xs md:text-sm text-neutral-600 font-semibold mb-3">
